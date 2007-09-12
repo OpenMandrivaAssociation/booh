@@ -1,6 +1,6 @@
 %define name    booh
 %define version 0.8.6
-%define release %mkrel 4
+%define release %mkrel 5
 %define	title       Booh
 %define	longtitle   Web-Album generator
 
@@ -17,6 +17,7 @@ URL:            http://www.booh.org
 Source:         http://www.booh.org/packages/%{name}-%{version}.tar.bz2
 Patch0:         %{name}-0.8.6.fixedruby.patch
 Patch1:         %{name}-0.8.6.gtkfix.patch
+Patch2:		%{name}-0.8.6.original_size.patch
 Requires:       ruby >= 1.8
 Requires:       ruby-gtk2 >= 0.12
 Requires:       ruby-gettext >= 0.8.0
@@ -26,7 +27,7 @@ BuildRequires:  ruby-devel
 BuildRequires:  ruby-gnome2-devel
 BuildRequires:  gettext
 BuildRequires:  ImageMagick
-BuildRequires:  gdk-pixbuf-devel 
+#BuildRequires:  gdk-pixbuf-devel 
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 
@@ -49,9 +50,11 @@ Yet another Web-Album generator. Highlights:
     images FAST (extensive use of keyboard shortcuts)
 
 %prep
+rm -rf %buildroot
 %setup -q
 %patch0 -p 1
 %patch1 -p 1
+%patch2 -p 1
 
 %build
 ruby setup.rb config
