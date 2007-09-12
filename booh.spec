@@ -122,7 +122,7 @@ rm -rf %buildroot
 %defattr(-, root, root)
 %doc README
 %{_bindir}/*
-%{ruby_libdir}/%{name}*
+%{_libdir}/%{name}*
 %{ruby_sitearchdir}/*
 %{_datadir}/%{name}
 %{_menudir}/%{name}
