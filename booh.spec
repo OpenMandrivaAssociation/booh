@@ -67,7 +67,7 @@ make
 rm -rf %buildroot
 ruby setup.rb install --prefix=%buildroot
 cd ext
-make install DESTDIR=%buildroot libdir=%buildroot%{_libdir} archdir=%buildroot%ruby_archdir
+make install DESTDIR=%buildroot libdir=%buildroot%{_libdir} archdir=%buildroot%ruby_sitearchdir
 cd ..
 
 mkdir -p %{buildroot}%{_menudir}
@@ -123,7 +123,7 @@ rm -rf %buildroot
 %doc README
 %{_bindir}/*
 %{ruby_libdir}/%{name}*
-%{ruby_archdir}/*
+%{ruby_sitearchdir}/*
 %{_datadir}/%{name}
 %{_menudir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
