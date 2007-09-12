@@ -4,9 +4,6 @@
 %define	title       Booh
 %define	longtitle   Web-Album generator
 
-#%{expand:%%define ruby_libdir %(ruby -rrbconfig -e "puts Config::CONFIG['sitelibdir']")}
-#%{expand:%%define ruby_archdir %(ruby -rrbconfig -e "puts Config::CONFIG['sitearchdir']")}
-
 Name:           %{name}
 Version:        %{version}
 Release:        %{release}
