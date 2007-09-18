@@ -24,7 +24,7 @@ BuildRequires:  ruby-devel
 BuildRequires:  ruby-gnome2-devel
 BuildRequires:  gettext
 BuildRequires:  ImageMagick
-#BuildRequires:  gdk-pixbuf-devel 
+BuildRequires:  gdk-pixbuf-devel 
 BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 
@@ -119,7 +119,7 @@ rm -rf %buildroot
 %defattr(-, root, root)
 %doc README
 %{_bindir}/*
-%{_libdir}/%{name}*
+%{ruby_sitelibdir}/%{name}*
 %{ruby_sitearchdir}/*
 %{_datadir}/%{name}
 %{_menudir}/%{name}
