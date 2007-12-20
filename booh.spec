@@ -25,6 +25,7 @@ BuildRequires:  ruby-gnome2-devel
 BuildRequires:  gettext
 BuildRequires:  ImageMagick
 BuildRequires:  gdk-pixbuf-devel 
+BuildRoot:      %{_tmppath}/%{name}-%{version}
 
 
 %description
