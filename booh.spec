@@ -67,17 +67,6 @@ cd ext
 make install DESTDIR=%buildroot libdir=%buildroot%{_libdir} archdir=%buildroot%ruby_sitearchdir
 cd ..
 
-mkdir -p %{buildroot}%{_menudir}
-cat << "EOF" > %{buildroot}%{_menudir}/%{name}
-?package(%{name}): \
-    needs=X11 \
-    section=Multimedia/Graphics \
-    command="%{_bindir}/booh" \
-    icon="booh.png" \
-    title="%{title}" \
-    longtitle="%{longtitle}" \
-    xdg="true"
-EOF
 
 install -d -m 755 %{buildroot}%{_datadir}/applications
 cat >  %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -122,7 +111,6 @@ rm -rf %buildroot
 %{ruby_sitelibdir}/%{name}*
 %{ruby_sitearchdir}/*
 %{_datadir}/%{name}
-%{_menudir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %{_mandir}/*/*
 %{_iconsdir}/*.png
