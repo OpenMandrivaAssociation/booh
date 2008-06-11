@@ -1,6 +1,6 @@
 %define name    booh
-%define version 0.8.6
-%define release %mkrel 5
+%define version 0.9.0
+%define release %mkrel 1
 %define	title       Booh
 %define	longtitle   Web-Album generator
 
@@ -12,9 +12,6 @@ License:        GPL
 Group:          Graphics
 URL:            http://www.booh.org
 Source:         http://www.booh.org/packages/%{name}-%{version}.tar.bz2
-Patch0:         %{name}-0.8.6.fixedruby.patch
-Patch1:         %{name}-0.8.6.gtkfix.patch
-Patch2:		%{name}-0.8.6.original_size.patch
 Requires:       ruby >= 1.8
 Requires:       ruby-gtk2 >= 0.12
 Requires:       ruby-gettext >= 0.8.0
@@ -47,11 +44,7 @@ Yet another Web-Album generator. Highlights:
     images FAST (extensive use of keyboard shortcuts)
 
 %prep
-rm -rf %buildroot
 %setup -q
-%patch0 -p 1
-%patch1 -p 1
-%patch2 -p 1
 
 %build
 ruby setup.rb config --rbdir=%ruby_vendorlibdir --sodir=%ruby_vendorarchdir
@@ -85,9 +78,9 @@ EOF
 # icons
 mkdir -p %{buildroot}%{_miconsdir}
 mkdir -p %{buildroot}%{_liconsdir}
-cp icons/booh-16x16.png %{buildroot}%{_miconsdir}/%{name}.png
-cp icons/booh-32x32.png %{buildroot}%{_iconsdir}/%{name}.png
-cp icons/booh-48x48.png %{buildroot}%{_liconsdir}/%{name}.png
+cp desktop/booh-16x16.png %{buildroot}%{_miconsdir}/%{name}.png
+cp desktop/booh-32x32.png %{buildroot}%{_iconsdir}/%{name}.png
+cp desktop/booh-48x48.png %{buildroot}%{_liconsdir}/%{name}.png
 
 # bash completion
 install -d -m 755 %{buildroot}%{_sysconfdir}/bash_completion.d
