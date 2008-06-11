@@ -68,8 +68,8 @@ cd ..
 
 
 install -d -m 755 %{buildroot}%{_datadir}/applications
-cp desktop/booh.desktop %{buildroot}%{_datadir}/applications/mandriva-booh.desktop
-cp desktop/booh-classifier.desktop %{buildroot}%{_datadir}/applications/mandriva-booh-classifier.desktop
+install -m 644 desktop/booh.desktop %{buildroot}%{_datadir}/applications
+install -m 644 desktop/booh-classifier.desktop %{buildroot}%{_datadir}/applications
 
 # icons
 mkdir -p %{buildroot}%{_miconsdir}
@@ -100,7 +100,8 @@ rm -rf %buildroot
 %{ruby_vendorlibdir}/%{name}*
 %{ruby_vendorarchdir}/*
 %{_datadir}/%{name}
-%{_datadir}/applications/mandriva-%{name}.desktop
+%{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/%{name}-classifier.desktop
 %{_mandir}/*/*
 %{_iconsdir}/*.png
 %{_iconsdir}/*/*.png
