@@ -54,10 +54,10 @@ rm -rf %buildroot
 %patch2 -p 1
 
 %build
-ruby setup.rb config
+ruby setup.rb config --rbdir=%ruby_vendorlibdir --sodir=%ruby_vendorarchdir
 ruby setup.rb setup
 cd ext
-ruby extconf.rb
+ruby extconf.rb --vendor
 make
 
 %install
@@ -108,8 +108,8 @@ rm -rf %buildroot
 %defattr(-, root, root)
 %doc README
 %{_bindir}/*
-%{ruby_sitelibdir}/%{name}*
-%{ruby_sitearchdir}/*
+%{ruby_vendorlibdir}/%{name}*
+%{ruby_vendorarchdir}/*
 %{_datadir}/%{name}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %{_mandir}/*/*
