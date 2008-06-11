@@ -23,26 +23,30 @@ BuildRequires:  ruby-gnome2-devel
 BuildRequires:  gettext
 BuildRequires:  ImageMagick
 BuildRequires:  gdk-pixbuf-devel 
+BuildRequires:  libexiv-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}
-
 
 %description
 Yet another Web-Album generator. Highlights:
 
   * automatic rotation of portrait images thanks to information
-    put by digital camera in .jpg file
+    put by digital camera in .jpg file (EXIF)
   * immediate display of images (preloading in browser)
   * keep position of "next/previous" hyperlinks in browser
     between images
-  * advanced video support (thumbnailing etc)
+  * full video support (including thumbnailing)
   * clever use of the whole space of a typical browser window
     (the need to scroll portrait images is stupid)
   * themability
   * sub-albums support
   * remember your preferred size of thumbnails accross sub-albums
-  * multi-processor support
+  * multi-processor support to speed up thumbnails generation
+  * smooth integration of panoramic images in thumbnails pages
+  * multi-languages web-album navigation (navigation links are
+    automatically shown in user's language)
   * a GUI to input captions, rotate, reorder and remove
     images FAST (extensive use of keyboard shortcuts)
+  * another GUI to classify photos and videos in a powerful manner
 
 %prep
 %setup -q
@@ -64,18 +68,8 @@ cd ..
 
 
 install -d -m 755 %{buildroot}%{_datadir}/applications
-cat >  %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
-[Desktop Entry]
-Encoding=UTF-8
-Name=%{title}
-Comment=%{longtitle}
-Exec=%{_bindir}/booh
-Icon=booh
-Terminal=false
-Type=Application
-StartupNotify=false
-Categories=X-MandrivaLinux-Multimedia-Graphics;Graphics;Photography;
-EOF
+cp desktop/booh.desktop %{buildroot}%{_datadir}/applications/mandriva-booh.desktop
+cp desktop/booh-classifier.desktop %{buildroot}%{_datadir}/applications/mandriva-booh-classifier.desktop
 
 # icons
 mkdir -p %{buildroot}%{_miconsdir}
