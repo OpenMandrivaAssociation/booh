@@ -1,6 +1,6 @@
 %define name    booh
 %define version 0.9.0
-%define release %mkrel 1
+%define release %mkrel 2
 %define	title       Booh
 %define	longtitle   Web-Album generator
 
@@ -12,6 +12,7 @@ License:        GPL
 Group:          Graphics
 URL:            http://www.booh.org
 Source:         http://www.booh.org/packages/%{name}-%{version}.tar.bz2
+Patch0:          booh-14df8734cd84e08bcb1712a4bf205ec11ab78ddc.patch
 Requires:       ruby >= 1.8
 Requires:       ruby-gtk2 >= 0.12
 Requires:       ruby-gettext >= 0.8.0
@@ -45,6 +46,7 @@ Yet another Web-Album generator. Highlights:
 
 %prep
 %setup -q
+%patch -p 1
 
 %build
 ruby setup.rb config --rbdir=%ruby_vendorlibdir --sodir=%ruby_vendorarchdir
