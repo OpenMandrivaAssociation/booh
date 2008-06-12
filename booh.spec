@@ -84,11 +84,15 @@ install -m 644 %{name}.bash-completion %{buildroot}%{_sysconfdir}/bash_completio
 
 %find_lang %name --all-name 
 
+%if %mdkversion < 200900
 %post
 %{update_menus}
+%endif
 
+%if %mdkversion < 200900
 %postun 
 %{clean_menus}
+%endif
 
 %clean
 rm -rf %buildroot
