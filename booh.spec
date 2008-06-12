@@ -1,6 +1,6 @@
 %define name    booh
 %define version 0.9.0
-%define release %mkrel 2
+%define release %mkrel 3
 %define	title       Booh
 %define	longtitle   Web-Album generator
 
@@ -16,7 +16,9 @@ Patch0:          booh-14df8734cd84e08bcb1712a4bf205ec11ab78ddc.patch
 Requires:       ruby >= 1.8
 Requires:       ruby-gtk2 >= 0.12
 Requires:       ruby-gettext >= 0.8.0
-Requires:       mencoder
+Requires:       mplayer
+Requires:       exif
+Requires:       gimp
 Requires:       ImageMagick
 BuildRequires:  ruby-devel
 BuildRequires:  ruby-gnome2-devel
