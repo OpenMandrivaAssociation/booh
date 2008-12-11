@@ -18,11 +18,11 @@ Requires:       ruby-gettext >= 0.8.0
 Requires:       mplayer
 Requires:       exif
 Requires:       gimp
-Requires:       ImageMagick
+Requires:       imagemagick
 BuildRequires:  ruby-devel
 BuildRequires:  ruby-gnome2-devel
 BuildRequires:  gettext
-BuildRequires:  ImageMagick
+BuildRequires:  imagemagick
 BuildRequires:  gdk-pixbuf-devel 
 BuildRequires:  libexiv-devel
 BuildRoot:      %{_tmppath}/%{name}-%{version}
