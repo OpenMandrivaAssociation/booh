@@ -1,6 +1,6 @@
 %define name    booh
 %define version 0.9.1
-%define release %mkrel 3
+%define release %mkrel 4
 %define	title       Booh
 %define	longtitle   Web-Album generator
 
