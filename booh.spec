@@ -1,6 +1,6 @@
 %define name    booh
-%define version 0.9.1
-%define release %mkrel 4
+%define version 0.9.2
+%define release %mkrel 1
 %define	title       Booh
 %define	longtitle   Web-Album generator
 
@@ -8,7 +8,7 @@ Name:           %{name}
 Version:        %{version}
 Release:        %{release}
 Summary:        Web-Album generator
-License:        GPL
+License:        GPLv2
 Group:          Graphics
 URL:            http://www.booh.org
 Source:         http://www.booh.org/packages/%{name}-%{version}.tar.bz2
