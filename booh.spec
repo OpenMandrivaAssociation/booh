@@ -71,6 +71,8 @@ install -d -m 755 %{buildroot}%{_datadir}/applications
 install -m 644 desktop/booh.desktop %{buildroot}%{_datadir}/applications
 install -m 644 desktop/booh-classifier.desktop %{buildroot}%{_datadir}/applications
 
+perl -pi -e 's/^Icon=%{name}.*/Icon=%{name}/g' %{buildroot}%{_datadir}/applications/*
+
 # icons
 mkdir -p %{buildroot}%{_miconsdir}
 mkdir -p %{buildroot}%{_liconsdir}
