@@ -10,7 +10,7 @@ Release:        %{release}
 Summary:        Web-Album generator
 License:        GPLv2
 Group:          Graphics
-URL:            http://www.booh.org
+URL:            https://www.booh.org
 Source:         http://www.booh.org/packages/%{name}-%{version}.tar.bz2
 Requires:       ruby >= 1.8
 Requires:       ruby-gtk2 >= 0.12
