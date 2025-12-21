@@ -19,6 +19,7 @@ Requires:       mplayer
 Requires:       exif
 Requires:       gimp
 Requires:       imagemagick
+BuildRequires:	make
 BuildRequires:  ruby-devel
 BuildRequires:  ruby-gnome2-devel
 BuildRequires:  gettext
